@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./public/css/attendanceSheet.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Attendance System/Attendance Sheet</title>
+</head>
+<body>
+    <nav>
+        
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/user/profile">Your Profile</a></li>
+            <li><a href="/changeAttendance">Change Attendance</a></li>
+            <li><a href="/">Back to Home</a></li>
+        </ul>
+    </nav>
+    <div class="page-content">
+            <h3>Welcome <span>Mr.<%= name %> </span> your class <span> <%= StudentDetails[StudentDetails.length - 1].department %> - <%= StudentDetails[StudentDetails.length - 1].classSec %> in <%= StudentDetails[StudentDetails.length - 1].currentYear %> </span></h3>
+            <p>latest session</p>
+    </div>
+    <table class="table">
+        <thead>
+            <th>S.No</th>
+            <th>Student Roll No</th>
+            <th>Student Name</th>
+            <th>Date and Time</th>
+            <th>Attendance</th>
+        </thead>
+        <tbody>
+            <%var i = 0;%>
+            <%StudentDetails.forEach(function(user){%>
+                 <tr class="td-list">
+                     <td data-label="S.No">
+                        <%- i+1 %>
+                     </td>
+                     <td data-label="Student Roll No">
+                        <%- user.studentRollNo %>
+                     </td>
+                     <td data-label="Student Name">
+                        <%- user.studentName %>
+                     </td>
+                     <td data-label="Date and Time"><%= DatenSession %></td>
+                     <%var flg = 0%>
+                     <%for(var index = 0; index < Absentees.length; index++){%> 
+                     <%if(Absentees[index] != user.studentName){%> 
+                     <%    var flg=0;%> 
+                     <%}else{%> 
+                     <%    var flg = 1;%> 
+                     <%    break;%> 
+                     <% }%> 
+                     <%}%> 
+                     <%if(flg == 0){%> 
+                         <td data-label="Attendance">Present</td>
+                     <%}else{%> 
+                         <td data-label="Attendance">Absent</td>
+                      <%}%> 
+                     
+                 </tr>
+                 <%i++; %> 
+              <%});%> 
+        </tbody>
+    </table>
+     <div class="result">
+         <p>No of Students = <%- studentNameList.length %></p>
+         <p>No of present Students = <%- presentStudents.length %></p>
+         <p>No of Absent Students = <%- Absentees.length %></p>
+         <%var presentPercent = (presentStudents.length/studentNameList.length) * 100;%>
+         <p>Attendance Persentage = <%- presentPercent.toFixed(2) %> %</p>
+     </div>
+     <%for(var itr = Attendance.length - 2; itr >= 0 ; itr-- ){%>
+        <div class="page-content">
+            <p>session - <%- itr + 1 %></p>
+        </div>
+        <table class="table">
+            <thead>
+                <th>S.No</th>
+                <th>Student Roll No</th>
+                <th>Student Name</th>
+                <th>Date and Time</th>
+                <th>Attendance</th>
+            </thead>
+            <tbody>
+                <%var i = 0;%>
+                <%StudentDetails.forEach(function(user){%>
+                     <tr class="td-list">
+                         <td data-label="S.No">
+                            <%- i+1 %>
+                         </td>
+                         <td data-label="Student Roll No">
+                            <%- user.studentRollNo %>
+                         </td>
+                         <td data-label="Student Name">
+                            <%- user.studentName %>
+                         </td>
+                         <td data-label="Date and Time"><%= Attendance[itr].date %></td>
+                         <%var flg = 0%>
+                         <%for(var index = 0; index < absents[itr].length; index++){%> 
+                         <%if(absents[itr][index] != user.studentName){%> 
+                         <%    var flg=0;%> 
+                         <%}else{%> 
+                         <%    var flg = 1;%> 
+                         <%    break;%> 
+                         <% }%> 
+                         <%}%> 
+                         <%if(flg == 0){%> 
+                             <td data-label="Attendance">Present</td>
+                         <%}else{%> 
+                             <td data-label="Attendance">Absent</td>
+                          <%}%> 
+                         
+                     </tr>
+                     <%i++; %> 
+                  <%});%> 
+            </tbody>
+        </table>
+     <%}%>
+     
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const links = document.querySelectorAll(".nav-links li");
+        const tdList = document.querySelectorAll(".td-list");
+
+        hamburger.addEventListener("click" , () => {
+            navLinks.classList.toggle("open");
+            links.forEach(link => {
+                link.classList.toggle("fade");
+            });
+            tdList.forEach(tdlist => {
+                tdlist.classList.toggle("close");
+            })
+        });
+    </script>
+</body>
+</html>

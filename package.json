@@ -1,0 +1,38 @@
+{
+  "name": "new-fypro",
+  "version": "1.0.0",
+  "description": "attendance taken automatically",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./views/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/BalajiDuraisamy321/new-fypro.git"
+  },
+  "keywords": [
+    "new-fypro"
+  ],
+  "author": "Balaji Duraisamy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/BalajiDuraisamy321/new-fypro/issues"
+  },
+  "homepage": "https://gitlab.com/BalajiDuraisamy321/new-fypro#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.10",
+    "nodemailer": "^6.4.2",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7"
+  }
+}

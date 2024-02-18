@@ -1,0 +1,38 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./public/css/changeAttendance.css" >  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Automated Attendance System/Change Attendance</title>
+        
+    </head>
+        <body>
+            <div class="landing-page">
+                <div class="container"> 
+                    <h1>CHANGE ATTENDANCE</h1>
+                    <p><%= changeAttendancemessage %></p>
+                    
+                
+                    <form action="/changeAttendance" method="POST" id="form">
+
+                        <div class="tbox">
+                            <input type="text" id="StuR.no" name="StuR_no" placeholder="@Roll no || @correct Name" value="">
+                        </div>
+
+                        <div class="tbox">
+                            <input type="text" id="present" name="present" placeholder="@Seesion No" value="">
+                        </div>
+
+                        <input class="btn" type="submit" name="" value="CONFIRM" >
+                        
+                    </form>
+                    <a class="b2" href="/studentattendance"><- BACK</a>
+                    <a class="b3" href="/"><- BACK TO HOME</a>
+                  
+                 
+                </div>
+            </div>
+            
+        </body>
+   
+</html>

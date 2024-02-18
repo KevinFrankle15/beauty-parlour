@@ -1,0 +1,45 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./public/css/SignUp pg.css" >  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Automated Attendance System/class Details</title>
+    </head>
+        <body>
+            <div class="landing-page">
+                <div class="container"> 
+                    <h1>Enter Class Details</h1>
+                    <p><%= classDetailsmessage %></p>
+                
+                    <form action="/user/classDetails" method="POST" id="form">
+                        <div class="tbox">
+                            <input type="text" id="Department" name="Department" placeholder="@Department" value="">
+                        </div>
+        
+        
+                        <div class="tbox">
+                            <input type="text" id="classYear" name="classYear" placeholder="@class Year" value="">
+                        </div>
+        
+                        <div class="tbox">
+                            <input type="text" id="classSec" name="classSec" placeholder="@class Sec" value="">
+                        </div>
+
+                        <div class="tbox">
+                            <input type="text" id="currentYear" name="currentYear" placeholder="@current Year" value="">
+                        </div>
+                       
+                        <input class="btn" type="submit" name="" value="NEXT ->" >
+                        
+                    </form>
+                    
+                    <a class="b3" href="/user/login"><- BACK</a>
+                  
+                 
+                </div>
+            </div>
+            
+        </body>
+   
+</html>

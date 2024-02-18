@@ -1,0 +1,39 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./public/css/editProfile.css" >  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Automated Attendance System/Edit Profile</title>
+        
+    </head>
+        <body>
+            <div class="landing-page">
+                <div class="container"> 
+                    <h1>EDIT PROFILE</h1>
+                    <p><%= editProfilemessage %></p>
+                
+                    <form action="/user/editProfile" method="POST" id="form">
+                        <div class="tbox">
+                            <input type="text" id="name" name="name" placeholder=<%= name %> value="">
+                        </div>
+        
+        
+                        <div class="tbox">
+                            <input type="email" id="email" name="email" placeholder=<%= email %> value="">
+                        </div>
+        
+                       
+                       
+                        <input class="btn" type="submit" name="" value="CONFIRM" >
+                        
+                    </form>
+                    <a class="b2" href="/user/profile"><- BACK</a>
+                    <a class="b3" href="/"><- BACK TO HOME</a>
+                  
+                 
+                </div>
+            </div>
+            
+        </body>
+   
+</html>

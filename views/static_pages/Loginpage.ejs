@@ -1,0 +1,39 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./public/css/LoginPage.css" >  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="html" type="text/html" href="SignUp.html">
+        <title>Automated Attendance System/login</title>
+    </head>
+       <body>
+           <div class="landing-page">
+            <div class="container"> 
+                <h1>LOG IN</h1>
+                <p><%= loginmessage %></p>
+            
+                <form action="/user/login" method="POST" id="form">
+                    <div class="tbox">
+                        <input type="email" id="email" name="email" placeholder="@email" value="">
+                    </div>
+
+                    <div class="tbox">
+                        <input type="password" id="password" name="password" placeholder="password" value="">
+                    </div>
+                   
+                    <input class="btn" type="submit" name="" value="LOGIN" >
+                    
+                </form>
+
+                <a class="b1" href="/user/forgotPassword">FORGOT PASSWORD ?</a>
+                <a class="b2" href="/user/classDetails">CREATE AN ACCOUNT</a>
+                <a class="b3" href="/"><- BACK TO HOME</a>
+              
+             
+            </div>
+           </div>
+            
+            
+        </body>
+   
+</html>

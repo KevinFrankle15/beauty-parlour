@@ -1,0 +1,49 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./public/css/profile.css" >  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="html" type="text/html" href="SignUp.html">
+        <title>Automated Attendance System/<%= name %> profile</title>
+    </head>
+       <body>
+           <div class="landing-page">
+            <div class="container"> 
+                <h1><%= name %></h1>
+                <div class="page-content">
+                    <div class="tbox">
+                        
+                            <a class="a1" href="/user/editProfile">EDIT PROFILE</a>
+                       
+                    </div>
+                    <div class="tbox">
+                        
+                            <a class="a2" href="/user/changePassword">CHANGE PASSWORD</a>
+                        
+                    </div>
+                    
+                        <form action="/user/profile" method="POST" id="form">
+                            
+                            <input class="btn" type="submit" name="" value="LOG OUT" >
+                        
+                        </form>
+                        
+                            
+                       
+                   
+                    
+                    
+                    
+                </div>
+                <a class="b2" href="/user/deleteAccount">DELETE AN ACCOUNT</a>
+                <a class="b3" href="/studentattendance"><- BACK</a>
+               
+              
+             
+            </div>
+           </div>
+            
+            
+        </body>
+   
+</html>
